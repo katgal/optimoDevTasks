@@ -44,7 +44,7 @@ body {
 .wrapper {
   height: 100vh;
   border: 3px solid var(--black);
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 /************************/
@@ -72,14 +72,12 @@ header {
 
 .squares_wrap {
   width: 90%;
-  height: 25vh;
+  height: 26vh;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   padding-top: 30px;
-  /* border assist */
-  border: 2px solid black;
-  /*do wywalenia*/
+  transition: 1s all;
 }
 
 .squares_wrap div {
@@ -88,6 +86,14 @@ header {
   background-color: rgb(255, 0, 0);
   transform: rotate(50deg);
   border: 3px solid var(--black);
+  transition: 1s all;
+}
+
+/* additional tweaks */
+
+.squares_wrap div:hover {
+  cursor: pointer;
+  box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.75);
 }
 
 .square_1 {
@@ -105,9 +111,6 @@ header {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  /* border assist */
-  border: 3px solid black;
-  /*do wywalenia*/
 }
 
 .equate {
@@ -119,6 +122,14 @@ header {
   height: 20px;
   background-color: rgb(0, 0, 255);
   border: 3px solid var(--black);
+  transition: 1s all;
+}
+
+/* additional tweaks */
+
+.equate:hover div {
+  cursor: pointer;
+  box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.75);
 }
 
 .equate div:first-child {
@@ -131,6 +142,14 @@ header {
   border-radius: 50px;
   background-color: rgb(0, 128, 128);
   border: 3px solid var(--black);
+  transition: 1s all;
+}
+
+/* additional tweaks */
+
+.circle:hover {
+  cursor: pointer;
+  box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.75);
 }
 
 /************************/
@@ -149,6 +168,15 @@ header {
   text-align: center;
   background-color: rgb(0, 0, 255);
   border: 3px solid var(--black);
+  transition: 1s all;
+}
+
+/* additional tweaks */
+
+.rectangle:hover {
+  cursor: pointer;
+  box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.75);
+  border-radius: 1%;
 }
 
 /************************/
@@ -157,8 +185,28 @@ header {
 
 /************************/
 
+/* additional media for smaller screens */
+
+@media (max-width: 414px) {
+  .squares_wrap {
+    padding-top: 15px;
+    height: 30vh;
+  }
+  .squares_wrap div {
+    width: 70px;
+    height: 70px;
+  }
+  .square_1 {
+    margin-top: 60px;
+  }
+  .rectangle {
+    height: 43vh;
+  }
+}
+
 @media (min-width: 583px) {
   .rectangle {
+    /* maybe not the most elegant way of positioning in this case but it works fine... for now... */
     height: 80vh;
     width: 250px;
     position: absolute;
@@ -194,15 +242,40 @@ header {
   }
 }
 
-/* bigger screens */
-@media (min-width: 900px) {
+/* additional media for landscape orientation */
 
+@media (orientation: landscape) and (max-width: 823px) {
+  .squares_wrap div {
+    width: 70px;
+    height: 70px;
+  }
+  .square_1 {
+    margin-top: 60px;
+  }
 }
 
+/* bigger screens */
 
+@media (min-width: 901px) {
+  .squares_wrap {
+    width: 40%;
+    float: left;
+  }
+  .circle_equate_wrap {
+    width: 36%;
+  }
+  .rectangle {
+    width: 220px;
+    right: 1%;
+    background-color: rgb(255, 255, 255);
+  }
+}
 
+/* additional media - bigger screens 2 */
 
-
-
-
-
+@media (min-width: 1029px) {
+  .rectangle {
+    width: 250px;
+    right: 3%;
+  }
+}
