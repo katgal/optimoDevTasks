@@ -1,0 +1,32 @@
+/************************/
+/*reset*/
+/************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/************************/
+/*colors*/
+/************************/
+
+/* rgb(128,128,0);
+rgb(0,128,0);
+rgb(255,0,0);
+rgb(200,55,55);
+rgb(0,0,0);
+rgb(255,255,255);
+rgb(0,0,255);
+rgb(0,128,128); */
+
+html {
+  --black: rgb(0, 0, 0);
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+}
+
+body {
+  background-color: rgb(0, 128, 0);
+}
