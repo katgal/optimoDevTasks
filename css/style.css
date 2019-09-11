@@ -150,6 +150,24 @@ header {
 .circle:hover {
   cursor: pointer;
   box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.75);
+  animation: bouncy 1s;
+}
+
+/* animation for circle */
+
+@keyframes bouncy {
+  0%, 10%, 50%, 100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+  }
+  70% {
+    transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+  }
 }
 
 /************************/
@@ -179,6 +197,13 @@ header {
   border-radius: 1%;
 }
 
+.rectangle:hover::after {
+  content: "Do you hear the voices too?";
+  display: block;
+  font-size: 2rem;
+  font-style: italic;
+}
+
 /************************/
 
 /*MEDIA QUERIES*/
@@ -206,9 +231,9 @@ header {
 
 @media (min-width: 583px) {
   .rectangle {
-    /* maybe not the most elegant way of positioning in this case but it works fine... for now... */
     height: 80vh;
     width: 250px;
+    /* maybe not the most elegant way of positioning in this case but it works fine... for now... */
     position: absolute;
     right: 3%;
     top: 10%;
